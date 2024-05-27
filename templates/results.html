@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Scraper Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Results for "{{ query }}"</h1>
+        <a href="/" class="btn btn-secondary mt-3">Back to Search</a>
+        <div class="row mt-3">
+            {% for image in images %}
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                        <img src="{{ image['image_path'] }}" class="card-img-top" alt="Image">
+                        <div class="card-body">
+                            <p class="card-text">URL: {{ image['index'] }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
